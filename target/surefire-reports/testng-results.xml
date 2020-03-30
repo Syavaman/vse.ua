@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="15791" started-at="2020-03-30T11:27:40 EEST" finished-at="2020-03-30T11:27:56 EEST">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="15791" started-at="2020-03-30T11:27:40 EEST" finished-at="2020-03-30T11:27:56 EEST">
+      <class name="FirstTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:FirstTest@3fee9989]" name="setUp" is-config="true" duration-ms="8377" started-at="2020-03-30T11:27:40 EEST" finished-at="2020-03-30T11:27:49 EEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyTitleOfPage()[pri:1, instance:FirstTest@3fee9989]" name="verifyTitleOfPage" duration-ms="8" started-at="2020-03-30T11:27:49 EEST" finished-at="2020-03-30T11:27:49 EEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTitleOfPage -->
+        <test-method status="PASS" signature="loginWithValidCredentials()[pri:2, instance:FirstTest@3fee9989]" name="loginWithValidCredentials" duration-ms="4999" started-at="2020-03-30T11:27:49 EEST" finished-at="2020-03-30T11:27:54 EEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithValidCredentials -->
+        <test-method status="PASS" signature="verifySearchOption()[pri:3, instance:FirstTest@3fee9989]" name="verifySearchOption" duration-ms="1195" started-at="2020-03-30T11:27:54 EEST" finished-at="2020-03-30T11:27:55 EEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchOption -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:FirstTest@3fee9989]" name="tearDown" is-config="true" duration-ms="1164" started-at="2020-03-30T11:27:55 EEST" finished-at="2020-03-30T11:27:56 EEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- FirstTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
