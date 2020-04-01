@@ -1,43 +1,48 @@
-import TopPage.TopPage;
+import PageObject.HomePage.HomePage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class FirstTest {
-    private TopPage toppage;
+    private HomePage homepage;
+     private WebDriver webDriver;
+
 
     @BeforeClass
     public void setUp() {
-        WebDriver webDriver = SingletonWD.getInstance(System.getProperty("browser"));
-        toppage = PageFactory.initElements(webDriver, TopPage.class);
-        webDriver.get("https://vse.ua");
+        WebDriver webDriver = Browser.getInstance();
+        homepage = new HomePage(webDriver);
     }
 
-    @Test(priority = 1)
+    @BeforeMethod
+    public void openBasePage() {
+        homepage.openPage();
+    }
+
+   @Test(priority = 1)
     public void verifyTitleOfPage() {
-        String title = SingletonWD.driver.getTitle();
+        String title = homepage.showTitle();
         Assert.assertEquals("Все цены Киева и Украины: товары и услуги, магазины", title, "Title contains invalid info");
     }
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void loginWithValidCredentials() {
-       toppage.LogInIntoSite("syava1204@gmail.com", "Svyatik12");
-        String nameOfLoggedInAccount = toppage.getNameOfLoggedInAccount().getText();
-        Assert.assertEquals("syava1204",nameOfLoggedInAccount,"Name is not correct or user is not authorised");
+        homepage.LogInIntoSite("syava1204@gmail.com", "Svyatik12");
+        String nameOfLoggedInAccount = homepage.getNameOfLoggedInAccount().getText();
+        Assert.assertEquals("syava1204", nameOfLoggedInAccount, "Name is not correct or user is not authorised");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void verifySearchOption() {
-        toppage.fillSearchFieldWithData("Samsung");
-        String result = toppage.getSearchResult();
+        homepage.fillSearchFieldWithData("Samsung");
+        String result = homepage.getSearchResult();
         Assert.assertTrue(result.contains("Samsung"), "Search feature does not work properly");
 
     }
 
-    @AfterClass
+   @AfterClass
     public void tearDown() {
-        SingletonWD.killDriverInstance();
+        Browser.killDriverInstance();
     }
 
 

@@ -4,10 +4,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class SingletonWD {
+public class Browser {
     public static WebDriver driver = null;
 
-    public static WebDriver getInstance(String browser) {
+    public static WebDriver getInstance() {
+        String browser = System.getProperty("browser");
         if (driver == null) {
             if (browser.equals("firefox")) {
                 System.setProperty("webdriver.gecko.driver", ".\\src\\main\\resources\\drivers\\geckodriver.exe");

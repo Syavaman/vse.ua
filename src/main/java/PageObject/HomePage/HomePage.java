@@ -1,14 +1,14 @@
-package TopPage;
+package PageObject.HomePage;
 
+import PageObject.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class TopPage {
-    WebDriver driver;
+public class HomePage extends BasePage {
 
-    public TopPage(WebDriver driver) {
-        this.driver = driver;
+    public HomePage(WebDriver driver) {
+        super(driver);
     }
 
     @FindBy(className = "search-text-input")
@@ -25,22 +25,27 @@ public class TopPage {
     private WebElement passwordField;
     @FindBy(xpath = "//button[@id='loginButton']")
     private WebElement clickLoginButton;
-    @FindBy (className = "user-info")
+    @FindBy(className = "user-info")
     private WebElement nameOfLoggedInAccount;
 
 
-    public TopPage fillSearchFieldWithData(String data) {
+    public HomePage fillSearchFieldWithData(String data) {
         searchField.click();
         searchField.sendKeys(data);
         searchButton.click();
-        return new TopPage(driver);
+        return new HomePage(driver);
     }
 
     public String getSearchResult() {
+
         return searchResult.getText();
     }
 
-    public  TopPage LogInIntoSite (String email, String password ){
+    public String showTitle() {
+        return driver.getTitle();
+    }
+
+    public HomePage LogInIntoSite(String email, String password) {
         logInButton.click();
         loginField.sendKeys(email);
         passwordField.sendKeys(password);
@@ -51,7 +56,7 @@ public class TopPage {
             e.printStackTrace();
         }
         driver.navigate().refresh();
-        return new TopPage(driver);
+        return new HomePage(driver);
     }
 
     public WebElement getNameOfLoggedInAccount() {
