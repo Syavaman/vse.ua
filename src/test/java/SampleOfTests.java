@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class FirstTest {
+public class SampleOfTests {
     private HomePage homepage;
      private WebDriver webDriver;
 

@@ -2,10 +2,10 @@
 
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="FirstTest">
-    <test name="FirstTest">
+<suite name="SampleOfTests">
+    <test name="SampleOfTests">
         <classes>
-            <class name="FirstTest"/>
+            <class name="SampleOfTests"/>
         </classes>
     </test>
 </suite>
