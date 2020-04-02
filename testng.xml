@@ -3,6 +3,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name="SampleOfTests">
+    <listeners>
+        <listener class-name="CustomListener"/>
+    </listeners>
     <test name="SampleOfTests">
         <classes>
             <class name="SampleOfTests"/>

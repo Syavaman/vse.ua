@@ -3,10 +3,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class SampleOfTests {
+public class SampleOfTests extends Browser {
     private HomePage homepage;
-     private WebDriver webDriver;
-
 
     @BeforeClass
     public void setUp() {
@@ -19,10 +17,10 @@ public class SampleOfTests {
         homepage.openPage();
     }
 
-   @Test(priority = 1)
+    @Test(priority = 1)
     public void verifyTitleOfPage() {
         String title = homepage.showTitle();
-        Assert.assertEquals("Все цены Киева и Украины: товары и услуги, магазины", title, "Title contains invalid info");
+        Assert.assertEquals("Все ценіы Киева и Украины: товары и услуги, магазины", title, "Title contains invalid info");
     }
 
     @Test(priority = 3)
@@ -40,7 +38,7 @@ public class SampleOfTests {
 
     }
 
-   @AfterClass
+    @AfterClass
     public void tearDown() {
         Browser.killDriverInstance();
     }

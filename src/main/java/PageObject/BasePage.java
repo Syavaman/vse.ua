@@ -12,8 +12,9 @@ public class BasePage {
         this.driver = driver;
     }
 
-    public void openPage (){
+    public void openPage() {
         driver.get("https://vse.ua");
 
     }
+
 }

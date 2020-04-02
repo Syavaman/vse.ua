@@ -10,7 +10,9 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver driver) {
         super(driver);
     }
-
+    public WebDriver getDriver() {
+        return driver;
+    }
     @FindBy(className = "search-text-input")
     private WebElement searchField;
     @FindBy(xpath = "//div[@class='search-group-submit']//input")
