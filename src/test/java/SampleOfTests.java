@@ -21,14 +21,14 @@ public class SampleOfTests extends Browser {
     @Test(priority = 1)
     public void verifyTitleOfPage() {
         String title = homepage.showTitle();
-        Assert.assertEquals("Все ценіы Киева и Украины: товары и услуги, магазины", title, "Title contains invalid info");
+        Assert.assertEquals("Все цены Киева и Украины: товары и услуги, магазины", title, "Title contains invalid info");
     }
 
     @Test(priority = 3)
     public void loginWithValidCredentials() {
         homepage.LogInIntoSite("syava1204@gmail.com", "Svyatik12");
         String nameOfLoggedInAccount = homepage.getNameOfLoggedInAccount().getText();
-        Assert.assertEquals("syava1204", nameOfLoggedInAccount, "Name is not correct or user is not authorised");
+        Assert.assertEquals(nameOfLoggedInAccount, "syava1204", "Name is not correct or user is not authorised");
     }
 
     @Test(priority = 2)

@@ -4,6 +4,7 @@
 
 <suite name="SampleOfTests">
     <listeners>
+        <listener class-name="BrowsersAndListeners.RetryListenerClass"/>
         <listener class-name="BrowsersAndListeners.CustomListener"/>
     </listeners>
     <test name="SampleOfTests">
