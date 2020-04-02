@@ -1,3 +1,5 @@
+package BrowsersAndListeners;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -49,6 +51,6 @@ public class Browser {
     public static void killDriverInstance(){
         driver.quit();
         driver = null;
-        System.out.println("Browser is closed");
+        System.out.println("RetryTests.Browser is closed");
     }
 }

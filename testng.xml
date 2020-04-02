@@ -4,7 +4,7 @@
 
 <suite name="SampleOfTests">
     <listeners>
-        <listener class-name="CustomListener"/>
+        <listener class-name="BrowsersAndListeners.CustomListener"/>
     </listeners>
     <test name="SampleOfTests">
         <classes>
