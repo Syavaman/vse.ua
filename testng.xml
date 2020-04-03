@@ -2,14 +2,13 @@
 
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="SampleOfTests">
+<suite name="LoginTests">
     <listeners>
-        <listener class-name="BrowsersAndListeners.RetryListenerClass"/>
         <listener class-name="BrowsersAndListeners.CustomListener"/>
     </listeners>
-    <test name="SampleOfTests">
+    <test name="LoginTests">
         <classes>
-            <class name="SampleOfTests"/>
+            <class name="LoginTests"/>
         </classes>
     </test>
 </suite>

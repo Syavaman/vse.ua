@@ -17,4 +17,6 @@ public class BasePage {
 
     }
 
+    public String emailName = "syava1204@gmail.com";
+    public String passwordData = "Svyatik12";
 }
