@@ -36,21 +36,21 @@ public class LoginTests extends Browser {
 
     }
 
-    @Test(priority = 2)
+    @Test(priority = 1)
     public void loginWithEmptyPassword() {
         homepage.LogInIntoSiteWithInvalidData(homepage.emailName);
         WebElement emptyPasswordField = homepage.getEmptyPassword();
         Assert.assertEquals(emptyPasswordField.isDisplayed(), true, "Error about wrong data was not displayed");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 1)
     public void loginWithEmptyCredentials() {
         homepage.LogInIntoSiteWithInvalidData();
         WebElement emptyEmailField = homepage.getEmptyEmail();
         Assert.assertEquals(emptyEmailField.isDisplayed(), true, "Error about wrong data was not displayed");
     }
 
-    @Test(priority = 4)
+    @Test(priority = 2)
     public void loginWithValidCredentials() {
         homepage.LogInIntoSite(homepage.emailName, homepage.passwordData);
         String nameOfLoggedInAccount = homepage.getNameOfLoggedInAccount().getText();
@@ -68,7 +68,7 @@ public class LoginTests extends Browser {
     }
 
 
-    //@AfterClass
+    @AfterClass
     public void tearDown() {
         Browser.killDriverInstance();
     }
