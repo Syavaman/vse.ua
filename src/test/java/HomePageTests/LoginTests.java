@@ -1,8 +1,7 @@
-import PageObject.BasePage;
+package HomePageTests;
+
 import PageObject.HomePage.HomePage;
 import BrowsersAndListeners.Browser;
-import org.apache.commons.lang3.builder.ToStringExclude;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -30,7 +29,7 @@ public class LoginTests extends Browser {
 
     @Test(priority = 1)
     public void loginWithInvalidCredentials() {
-        homepage.LogInIntoSiteWithInvalidData(homepage.emailName, "1234");
+        homepage.logInIntoSiteWithInvalidData(homepage.emailName, "1234");
         WebElement errorTable = homepage.getErrorLoginOrPassword();
         Assert.assertEquals(errorTable.isDisplayed(), true, "Error about wrong data was not displayed");
 
@@ -38,21 +37,28 @@ public class LoginTests extends Browser {
 
     @Test(priority = 1)
     public void loginWithEmptyPassword() {
-        homepage.LogInIntoSiteWithInvalidData(homepage.emailName);
+        homepage.logInIntoSiteWithInvalidData(homepage.emailName);
         WebElement emptyPasswordField = homepage.getEmptyPassword();
         Assert.assertEquals(emptyPasswordField.isDisplayed(), true, "Error about wrong data was not displayed");
     }
 
     @Test(priority = 1)
     public void loginWithEmptyCredentials() {
-        homepage.LogInIntoSiteWithInvalidData();
+        homepage.logInIntoSiteWithInvalidData();
         WebElement emptyEmailField = homepage.getEmptyEmail();
         Assert.assertEquals(emptyEmailField.isDisplayed(), true, "Error about wrong data was not displayed");
     }
 
+    @Test(priority = 1)
+    public void logOutFromSite() {
+        homepage.logOut();
+        String logOutAcc = homepage.getNameOfLoggedInAccount().getText();
+        Assert.assertEquals(logOutAcc, "Войти", "User was not logged out");
+    }
+
     @Test(priority = 2)
     public void loginWithValidCredentials() {
-        homepage.LogInIntoSite(homepage.emailName, homepage.passwordData);
+        homepage.logInIntoSite(homepage.emailName, homepage.passwordData);
         String nameOfLoggedInAccount = homepage.getNameOfLoggedInAccount().getText();
         String accountName = homepage.getAccountName();
         Assert.assertEquals(nameOfLoggedInAccount, accountName, "Name is not correct or user is not authorised");

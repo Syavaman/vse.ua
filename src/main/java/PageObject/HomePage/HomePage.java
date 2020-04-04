@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.sql.SQLOutput;
+
 public class HomePage extends BasePage {
 
     public HomePage(WebDriver driver) {
@@ -33,10 +35,17 @@ public class HomePage extends BasePage {
     private WebElement nameOfLoggedInAccount;
     @FindBy(xpath = "//div[@class='form-group field-login-form-password required has-error']//div[@class='dropdown-hint afterLeft']")
     private WebElement errorLoginOrPassword;
-    @FindBy (xpath = "//div[@class='form-group field-login-form-login required has-error']//div[@class='dropdown-hint afterLeft']")
+    @FindBy(xpath = "//div[@class='form-group field-login-form-login required has-error']//div[@class='dropdown-hint afterLeft']")
     private WebElement emptyEmail;
-    @FindBy (xpath = "//div[@class='form-group field-login-form-password required has-error']//div[@class='dropdown-hint afterLeft']")
+    @FindBy(xpath = "//div[@class='form-group field-login-form-password required has-error']//div[@class='dropdown-hint afterLeft']")
     private WebElement emptyPassword;
+    @FindBy(xpath = "//li[7]/a")
+    private WebElement clickLogOutButton;
+    @FindBy (xpath = "//span[contains(text(),'RU')]")
+    private WebElement languageRU;
+    @FindBy (xpath = "//a[contains(text(),'UA')]")
+    private WebElement languageUA;
+
 
     public HomePage fillSearchFieldWithData(String data) {
         searchField.click();
@@ -50,7 +59,6 @@ public class HomePage extends BasePage {
     }
 
     public String getSearchResult() {
-
         return searchResult.getText();
     }
 
@@ -58,7 +66,7 @@ public class HomePage extends BasePage {
         return driver.getTitle();
     }
 
-    public HomePage LogInIntoSite(String email, String password) {
+    public HomePage logInIntoSite(String email, String password) {
         logInButton.click();
         loginField.sendKeys(email);
         passwordField.sendKeys(password);
@@ -72,7 +80,7 @@ public class HomePage extends BasePage {
         return new HomePage(driver);
     }
 
-    public HomePage LogInIntoSiteWithInvalidData(String email, String password) {
+    public HomePage logInIntoSiteWithInvalidData(String email, String password) {
         logInButton.click();
         loginField.sendKeys(email);
         passwordField.sendKeys(password);
@@ -81,7 +89,8 @@ public class HomePage extends BasePage {
         System.out.println(getErrorLoginOrPassword().getText() + " Was displayed");
         return new HomePage(driver);
     }
-    public HomePage LogInIntoSiteWithInvalidData(String email) {
+
+    public HomePage logInIntoSiteWithInvalidData(String email) {
         logInButton.click();
         loginField.sendKeys(email);
         clickLoginButton.click();
@@ -89,7 +98,8 @@ public class HomePage extends BasePage {
         System.out.println(emptyPassword.getText() + " Was displayed");
         return new HomePage(driver);
     }
-    public HomePage LogInIntoSiteWithInvalidData() {
+
+    public HomePage logInIntoSiteWithInvalidData() {
         logInButton.click();
         clickLoginButton.click();
         System.out.println("You are trying to Login with empty email and password");
@@ -98,6 +108,12 @@ public class HomePage extends BasePage {
         return new HomePage(driver);
     }
 
+    public HomePage logOut(){
+        logInIntoSite(emailName,passwordData);
+        logInButton.click();
+        clickLogOutButton.click();
+        return new HomePage(driver);
+    }
 
     public WebElement getNameOfLoggedInAccount() {
         return nameOfLoggedInAccount;
@@ -113,5 +129,20 @@ public class HomePage extends BasePage {
 
     public WebElement getErrorLoginOrPassword() {
         return errorLoginOrPassword;
+    }
+
+    public HomePage checkRussianLanguage (){
+        languageRU.click();
+        System.out.println("Language is changed to Russian and title is : " + driver.getTitle());
+        return new HomePage(driver);
+    }
+    public HomePage checkUkrainianLanguage (){
+        languageUA.click();
+        System.out.println("Language is changed to Ukrainian and title is : " + driver.getTitle());
+        return new HomePage(driver);
+    }
+
+    public WebElement getLanguageUA() {
+        return languageUA;
     }
 }
