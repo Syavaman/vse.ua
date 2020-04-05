@@ -1,3 +1,5 @@
+package HomePageTests;
+
 import BrowsersAndListeners.Browser;
 import PageObject.HomePage.HomePage;
 import org.openqa.selenium.WebDriver;
@@ -22,16 +24,22 @@ public class LanguageTests extends Browser {
         homepage.openPage();
     }
 
-    @Test (priority = 1)
-    public void checkSwitchToUkrainian(){
+    @Test(priority = 1)
+    public void checkSwitchToUkrainian() {
         homepage.checkUkrainianLanguage();
-        WebElement UA = homepage.getLanguageUA();
-        Assert.assertEquals(UA.isEnabled(),false);
+        String languageChecker = homepage.getAllPrices().getText();
+        Assert.assertEquals(languageChecker, "ВСІ ЦІНИ", "Language was not switched to Ukrainian");
+    }
+
+    @Test(priority = 2)
+    public void checkSwitchToRussian() {
+        homepage.checkRussianLanguage();
+        String languageChecker = homepage.getAllPrices().getText();
+        Assert.assertEquals(languageChecker, "ВСЕ ЦЕНЫ", "Language was not switched to Ukrainian");
     }
 
 
-
-   // @AfterClass
+    @AfterClass
     public void tearDown() {
         Browser.killDriverInstance();
     }

@@ -10,6 +10,7 @@
     <test name="HomePageTests.LoginTests">
         <classes>
             <class name="HomePageTests.LoginTests"/>
+            <class name="HomePageTests.LanguageTests"/>
         </classes>
     </test>
 </suite>

@@ -41,10 +41,12 @@ public class HomePage extends BasePage {
     private WebElement emptyPassword;
     @FindBy(xpath = "//li[7]/a")
     private WebElement clickLogOutButton;
-    @FindBy (xpath = "//span[contains(text(),'RU')]")
+    @FindBy (xpath = "//a[contains(text(),'RU')]")
     private WebElement languageRU;
     @FindBy (xpath = "//a[contains(text(),'UA')]")
     private WebElement languageUA;
+    @FindBy (xpath = "//div[@class='logo']//span[1]")
+    private WebElement allPrices;
 
 
     public HomePage fillSearchFieldWithData(String data) {
@@ -144,5 +146,9 @@ public class HomePage extends BasePage {
 
     public WebElement getLanguageUA() {
         return languageUA;
+    }
+
+    public WebElement getAllPrices() {
+        return allPrices;
     }
 }

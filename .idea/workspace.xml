@@ -4,7 +4,7 @@
     <list default="true" id="c926af59-ebbd-4f84-97c1-a6dc45361bbb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/HomePage/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/HomePage/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests/LoginTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LanguageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests/LanguageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +51,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LanguageTests.checkSwitchToUkrainian (1)">
+  <component name="RunManager" selected="TestNG.C:/Users/msi7r/Desktop/vse.ua/testng.xml">
     <configuration name="C:/Users/msi7r/Desktop/vse.ua/testng.xml" type="TestNG" nameIsGenerated="true">
       <module name="vse.ua" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
@@ -81,22 +81,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomePageTests.loginWithValidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LanguageTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="vse.ua" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HomePageTests" />
-      <option name="METHOD_NAME" value="loginWithValidCredentials" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="MAIN_CLASS_NAME" value="HomePageTests.LanguageTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LanguageTests.checkSwitchToUkrainian (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LanguageTests.checkSwitchToUkrainian" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="vse.ua" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LanguageTests" />
+      <option name="MAIN_CLASS_NAME" value="HomePageTests.LanguageTests" />
       <option name="METHOD_NAME" value="checkSwitchToUkrainian" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -108,7 +107,7 @@
     <configuration name="LanguageTests.checkSwitchToUkrainian" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="vse.ua" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LanguageTests" />
+      <option name="MAIN_CLASS_NAME" value="HomePageTests.LanguageTests" />
       <option name="METHOD_NAME" value="checkSwitchToUkrainian" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -140,26 +139,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTests.loginWithEmptyCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="vse.ua" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HomePageTests.LoginTests" />
-      <option name="METHOD_NAME" value="loginWithEmptyCredentials" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="PARAMETERS" value="0" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LanguageTests.checkSwitchToUkrainian (1)" />
-        <item itemvalue="TestNG.LanguageTests.checkSwitchToUkrainian" />
+        <item itemvalue="TestNG.LanguageTests" />
         <item itemvalue="TestNG.LoginTests" />
+        <item itemvalue="TestNG.LanguageTests.checkSwitchToUkrainian" />
+        <item itemvalue="TestNG.LanguageTests.checkSwitchToUkrainian (1)" />
         <item itemvalue="TestNG.LoginTests.logOutFromSite" />
-        <item itemvalue="TestNG.LoginTests.loginWithEmptyCredentials (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -237,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585916854849</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="+Several TC`s for language functionality">
+      <created>1586018723149</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1586018723149</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -250,7 +243,8 @@
     <MESSAGE value="+RetryListener" />
     <MESSAGE value="+RetryListener2" />
     <MESSAGE value="+Several TC`s for LogIn functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="+Several TC`s for LogIn functionality" />
+    <MESSAGE value="+Several TC`s for language functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="+Several TC`s for language functionality" />
   </component>
   <component name="WindowStateProjectService">
     <state x="477" y="48" key="#&lt;default&gt;" timestamp="1585152060357">
@@ -277,10 +271,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="536" y="216" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1585151954635" />
-    <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1586018573877">
+    <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1586089116287">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1586018573877" />
+    <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1586089116287" />
     <state x="472" y="339" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1585746133981">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -289,30 +284,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="273" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1585832780000" />
-    <state x="292" y="8" key="CommitChangelistDialog2" timestamp="1585916854273">
+    <state x="292" y="8" key="CommitChangelistDialog2" timestamp="1586018722343">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="292" y="8" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1585916854273" />
+    <state x="292" y="8" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1586018722343" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1585555719022">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1585555719022" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1586018628835">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1586090503760">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1586018628835" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1586018628834">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1586018732757" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586090503760" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1586090503759">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1586018628834" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1586018628834">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1586018732757" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586090503759" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1586090503759">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1586018628834" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1586018628835">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1586018732757" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586090503759" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1586090503760">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1586018628835" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1586018732757" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586090503760" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1585751031086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -329,11 +328,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1585751031086" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1586011569367">
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1586088962683">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1585912293259" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586011569367" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586088962683" />
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585749078495">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
