@@ -25,6 +25,7 @@ public class SearchMenu extends BasePage {
     private String wrongDataForSearch = "dasdasdasdasd";
 
 
+
     public SearchMenu fillSearchFieldWithData(String data) {
         searchField.click();
         searchField.sendKeys(data);

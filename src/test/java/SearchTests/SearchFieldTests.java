@@ -1,6 +1,7 @@
 package SearchTests;
 import BrowsersAndListeners.Browser;
 import PageObject.Search.SearchMenu;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -34,6 +35,13 @@ public class SearchFieldTests {
         String expectedResult = String.format("Ничего не найдено по запросу "+searchField.getWrongDataForSearch());
         String actualResult = searchField.getWrongEnteredSearchResult().getText();
         Assert.assertEquals(actualResult,expectedResult,"Some results were shown for incorrect search");
+    }
+
+    @Test
+    public void verifyToSmallSearchRequest(){
+        searchField.fillSearchFieldWithData("1");
+        String actualResult =searchField.getWrongEnteredSearchResult().getText();
+        Assert.assertTrue(actualResult.contains("Слишком короткий запрос"),"Search with one character works");
     }
 
     @Test
