@@ -29,7 +29,7 @@ public class BasePage {
         driver.get("https://vse.ua");
     }
 
-    public HomePage openPageAndlogIn() {
+    public BasePage openPageAndlogIn() {
         driver.get("https://vse.ua");
         logInButton.click();
         loginField.sendKeys(emailName);
@@ -41,10 +41,11 @@ public class BasePage {
             e.printStackTrace();
         }
         driver.navigate().refresh();
-        return new HomePage(driver);
+        return new BasePage(driver);
     }
 
     public String emailName = "syava1204@gmail.com";
     public String passwordData = "Svyatik12";
     public String searchShop = "Epicentr";
+    public String searchProduct = "Samsung";
 }

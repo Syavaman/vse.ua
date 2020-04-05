@@ -17,12 +17,6 @@ public class HomePage extends BasePage {
         return driver;
     }
 
-    @FindBy(className = "search-text-input")
-    private WebElement searchField;
-    @FindBy(xpath = "//div[@class='search-group-submit']//input")
-    private WebElement searchButton;
-    @FindBy(xpath = "//li/h1/span")
-    private WebElement searchResult;
     @FindBy(xpath = "//span[@class='user-info']//a//span")
     private WebElement logInButton;
     @FindBy(xpath = "//input[@id='login-form-login']")
@@ -49,19 +43,10 @@ public class HomePage extends BasePage {
     private WebElement allPrices;
 
 
-    public HomePage fillSearchFieldWithData(String data) {
-        searchField.click();
-        searchField.sendKeys(data);
-        searchButton.click();
-        return new HomePage(driver);
-    }
+
 
     public String getAccountName() {
         return emailName.substring(0, emailName.indexOf("@"));
-    }
-
-    public String getSearchResult() {
-        return searchResult.getText();
     }
 
     public String showTitle() {

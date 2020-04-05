@@ -65,15 +65,6 @@ public class LoginTests extends Browser {
     }
 
 
-    @Test(priority = 3)
-    public void verifySearchOption() {
-        homepage.fillSearchFieldWithData("Samsung");
-        String result = homepage.getSearchResult();
-        Assert.assertTrue(result.contains("Samsung"), "Search feature does not work properly");
-
-    }
-
-
     @AfterClass
     public void tearDown() {
         Browser.killDriverInstance();
