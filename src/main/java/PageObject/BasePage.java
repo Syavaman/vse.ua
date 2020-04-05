@@ -31,11 +31,16 @@ public class BasePage {
 
     public HomePage openPageAndlogIn() {
         driver.get("https://vse.ua");
-        languageRU.click();
         logInButton.click();
         loginField.sendKeys(emailName);
         passwordField.sendKeys(passwordData);
         clickLoginButton.click();
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        driver.navigate().refresh();
         return new HomePage(driver);
     }
 

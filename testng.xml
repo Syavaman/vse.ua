@@ -11,6 +11,7 @@
         <classes>
             <class name="HomePageTests.LoginTests"/>
             <class name="HomePageTests.LanguageTests"/>
+            <class name="PersonalAccountTests.FavoriteShopsTests"/>
         </classes>
     </test>
 </suite>

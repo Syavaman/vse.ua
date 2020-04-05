@@ -18,7 +18,7 @@ public class FavoriteShops extends BasePage {
     private WebElement findedShop;
     @FindBy(xpath = "//a[contains(@class,'favorite-toggle')]")
     private WebElement addTofavorite;
-    @FindBy(xpath = "//div[@class='logo']//span[1]")
+    @FindBy(xpath = "//div[@class='links dropdown']//li[1]//a[1]//span[1]")
     private WebElement favoriteShops;
     @FindBy(xpath = "//div[@class='po-magazine-logo']//a//img")
     private WebElement favoriteShopLogo;
@@ -40,6 +40,8 @@ public class FavoriteShops extends BasePage {
         searchButton.click();
         findedShop.click();
         addTofavorite.click();
+        clickUserInfo.click();
+        favoriteShops.click();
         return new FavoriteShops(driver);
     }
 
@@ -48,7 +50,15 @@ public class FavoriteShops extends BasePage {
     }
 
     public  FavoriteShops removeFromFavorites(){
-
+        clickUserInfo.click();
+        favoriteShops.click();
+        System.out.println(favoriteShopLogo.getText() + "store is going to be removed from Favorites");
+        deleteFromFavorite.click();
+        driver.navigate().refresh();
         return new FavoriteShops(driver);
+    }
+
+    public WebElement getEmptyFavoriteShopList() {
+        return emptyFavoriteShopList;
     }
 }
