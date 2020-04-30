@@ -27,6 +27,7 @@ public class LanguageTests extends Browser {
     public void checkSwitchToUkrainian() {
         homepage.checkUkrainianLanguage();
         String languageChecker = homepage.getAllPrices().getText();
+        // Магические значение и строки выносим в константы / конфиги / енамы. Чтобы если что-то изменилось, то пришлось бы исправлять только в одном месте, а не в куче тестов
         Assert.assertEquals(languageChecker, "ВСІ ЦІНИ", "Language was not switched to Ukrainian");
     }
 

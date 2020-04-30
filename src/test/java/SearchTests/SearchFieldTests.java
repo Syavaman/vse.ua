@@ -27,11 +27,14 @@ public class SearchFieldTests {
     public void verifySearchOption() {
         searchField.fillSearchFieldWithData(searchField.searchProduct);
         String result = searchField.getSearchResult();
+        // Магические строки
         Assert.assertTrue(result.contains("Samsung"), "Search feature does not work properly");
     }
     @Test
     public void verifySearchOptionWithInvalidData() {
         searchField.fillSearchFieldWithData(searchField.getWrongDataForSearch());
+        // Можно вынести в отдельный метод создание ошибки. Например есть отдельный класс, который хранит
+        // инфу либо о всех ошибках, либо только по поиску например. И из него все брать для тестов
         String expectedResult = String.format("Ничего не найдено по запросу "+searchField.getWrongDataForSearch());
         String actualResult = searchField.getWrongEnteredSearchResult().getText();
         Assert.assertEquals(actualResult,expectedResult,"Some results were shown for incorrect search");
@@ -39,6 +42,7 @@ public class SearchFieldTests {
 
     @Test
     public void verifyToSmallSearchRequest(){
+        // Магические строки - shortSearchQuery
         searchField.fillSearchFieldWithData("1");
         String actualResult =searchField.getWrongEnteredSearchResult().getText();
         Assert.assertTrue(actualResult.contains("Слишком короткий запрос"),"Search with one character works");

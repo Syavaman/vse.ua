@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.sql.SQLOutput;
+import java.sql.SQLOutput; // не нужный импорт
 
 public class HomePage extends BasePage {
 
@@ -13,6 +13,7 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
+    // зачем ты возвращаешь драйвер из страницы? не надо так
     public WebDriver getDriver() {
         return driver;
     }
@@ -35,6 +36,8 @@ public class HomePage extends BasePage {
     private WebElement emptyPassword;
     @FindBy(xpath = "//li[7]/a")
     private WebElement clickLogOutButton;
+    // Повторяющийся элемент + От другого языка отличается лишь двумя буквами, соответственно данный элемент можно
+    // унифицировать и брать RU или UA в зависимости от того, что сейчас тестим
     @FindBy (xpath = "//a[contains(text(),'RU')]")
     private WebElement languageRU;
     @FindBy (xpath = "//a[contains(text(),'UA')]")
@@ -42,17 +45,22 @@ public class HomePage extends BasePage {
     @FindBy (xpath = "//div[@class='logo']//span[1]")
     private WebElement allPrices;
 
-
+    // Какой однако большой отступ
 
 
     public String getAccountName() {
         return emailName.substring(0, emailName.indexOf("@"));
     }
 
+    // Ты не показываешь тайтл, а берешь текст, тогда название getTitleName. Так же лучше держать подобные
+    // методы в базовой странице, ибо на каждой странице будет тайтл
     public String showTitle() {
         return driver.getTitle();
     }
 
+    // Очень много методов для логина. Зачем? Просто передавай либо корректные, либо не корректные значения
+    // После можно рефреш страницы перенести в отдельный метод в базовую страницу
+    // Проверка же что залогинились будет отдельно
     public HomePage logInIntoSite(String email, String password) {
         logInButton.click();
         loginField.sendKeys(email);
@@ -65,6 +73,8 @@ public class HomePage extends BasePage {
         }
         driver.navigate().refresh();
         return new HomePage(driver);
+        // Не вижу смысла создавать каждый раз новый объект. Просто возвращай this (сам объект, на
+        // котором был вызван метод)
     }
 
     public HomePage logInIntoSiteWithInvalidData(String email, String password) {
@@ -72,7 +82,10 @@ public class HomePage extends BasePage {
         loginField.sendKeys(email);
         passwordField.sendKeys(password);
         clickLoginButton.click();
+        // SOUT не стоит использовать. Если нужно - логирование
         System.out.println("You are trying to Login with Invalid Credentials");
+        // Это уже похоже на то, что нужно проверить. Зачем это делать здесь? Вынеси в отдельный метод,
+        // возвращай булеан и будет тебе счастье
         System.out.println(getErrorLoginOrPassword().getText() + " Was displayed");
         return new HomePage(driver);
     }
@@ -101,6 +114,7 @@ public class HomePage extends BasePage {
         clickLogOutButton.click();
         return new HomePage(driver);
     }
+
 
     public WebElement getNameOfLoggedInAccount() {
         return nameOfLoggedInAccount;

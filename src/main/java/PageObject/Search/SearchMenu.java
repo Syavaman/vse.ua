@@ -22,6 +22,7 @@ public class SearchMenu extends BasePage {
     private WebElement  clearedSearchField;
     @FindBy (xpath = "//div[@class='search-info-head']")
     private WebElement wrongEnteredSearchResult;
+    // А вот я и нашла дату не в тестах) Не храни такое внутри страниц
     private String wrongDataForSearch = "dasdasdasdasd";
 
 
@@ -42,6 +43,8 @@ public class SearchMenu extends BasePage {
     }
 
     public SearchMenu verifyClearingOfSearch(){
+        // А как ты тут проверяешь что поле очистилось? тут ты его просто
+        // очищаешь на сколько я вижу. к тому же делаешь это двумя способами, хотя по идее кнопки бы хватило, без обновления страницы
         fillSearchFieldWithData("Philips");
         clearSearchButton.click();
         driver.navigate().refresh();

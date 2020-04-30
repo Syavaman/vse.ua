@@ -13,7 +13,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-public class Browser {
+// Названия браузеров лучше хранить например в енаме, тогда мы точно будем уверены что используем корректрое название
+// конечно кажется что это слишком, все равно мы используем строки везде, но это обезовасит работу в будущем, вдруг
+// кто-то решит переписать класс синглтона и совершит ошибку? Минимизируем риски
+public class Browser { // Название в приципе нормально, но мб DriverFactory подошло бы чуть лучше
     public static WebDriver driver = null;
 
     public static WebDriver getInstance() {
@@ -23,7 +26,7 @@ public class Browser {
                 System.setProperty("webdriver.gecko.driver", ".\\src\\main\\resources\\drivers\\geckodriver.exe");
                 driver = new FirefoxDriver();
             } else if (browser.equals("chrome")) {
-                System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\drivers\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\drivers\\chromedriver81.exe");
                 driver = new ChromeDriver();
             } else {
                 throw new UnsupportedOperationException("Unknown browser" + browser);
