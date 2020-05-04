@@ -1,6 +1,7 @@
 package PageObject.HomePage;
 
 import PageObject.BasePage;
+import PageObject.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,15 +9,11 @@ import org.openqa.selenium.support.FindBy;
 import java.sql.SQLOutput; // не нужный импорт
 
 public class HomePage extends BasePage {
-
+    private Constants constant;
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    // зачем ты возвращаешь драйвер из страницы? не надо так
-    public WebDriver getDriver() {
-        return driver;
-    }
 
     @FindBy(xpath = "//span[@class='user-info']//a//span")
     private WebElement logInButton;
@@ -37,24 +34,21 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//li[7]/a")
     private WebElement clickLogOutButton;
     // Повторяющийся элемент + От другого языка отличается лишь двумя буквами, соответственно данный элемент можно
-    // унифицировать и брать RU или UA в зависимости от того, что сейчас тестим
-    @FindBy (xpath = "//a[contains(text(),'RU')]")
+    // унифицировать и брать RU или UA в зависимости от того, что сейчас тестим - не зрозумів. Хз як зробити
+    @FindBy(xpath = "//a[contains(text(),'RU')]")
     private WebElement languageRU;
-    @FindBy (xpath = "//a[contains(text(),'UA')]")
+    @FindBy(xpath = "//a[contains(text(),'UA')]")
     private WebElement languageUA;
-    @FindBy (xpath = "//div[@class='logo']//span[1]")
+    @FindBy(xpath = "//div[@class='logo']//span[1]")
     private WebElement allPrices;
 
-    // Какой однако большой отступ
-
-
     public String getAccountName() {
-        return emailName.substring(0, emailName.indexOf("@"));
+        return constant.emailName.substring(0, constant.emailName.indexOf("@"));
     }
 
     // Ты не показываешь тайтл, а берешь текст, тогда название getTitleName. Так же лучше держать подобные
-    // методы в базовой странице, ибо на каждой странице будет тайтл
-    public String showTitle() {
+    // методы в базовой странице, ибо на каждой странице будет тайтл - тайтл поміняв, по логіці я тільки раз чекаю сайт
+    public String getTitleName() {
         return driver.getTitle();
     }
 
@@ -72,9 +66,9 @@ public class HomePage extends BasePage {
             e.printStackTrace();
         }
         driver.navigate().refresh();
-        return new HomePage(driver);
+        return this;
         // Не вижу смысла создавать каждый раз новый объект. Просто возвращай this (сам объект, на
-        // котором был вызван метод)
+        // котором был вызван метод - DONE!)
     }
 
     public HomePage logInIntoSiteWithInvalidData(String email, String password) {
@@ -82,12 +76,10 @@ public class HomePage extends BasePage {
         loginField.sendKeys(email);
         passwordField.sendKeys(password);
         clickLoginButton.click();
-        // SOUT не стоит использовать. Если нужно - логирование
-        System.out.println("You are trying to Login with Invalid Credentials");
+        // SOUT не стоит использовать. Если нужно - логирование - Done!
         // Это уже похоже на то, что нужно проверить. Зачем это делать здесь? Вынеси в отдельный метод,
-        // возвращай булеан и будет тебе счастье
-        System.out.println(getErrorLoginOrPassword().getText() + " Was displayed");
-        return new HomePage(driver);
+        // возвращай булеан и будет тебе счастье - Done!
+        return this;
     }
 
     public HomePage logInIntoSiteWithInvalidData(String email) {
@@ -96,7 +88,7 @@ public class HomePage extends BasePage {
         clickLoginButton.click();
         System.out.println("You are trying to Login with empty password");
         System.out.println(emptyPassword.getText() + " Was displayed");
-        return new HomePage(driver);
+        return this;
     }
 
     public HomePage logInIntoSiteWithInvalidData() {
@@ -105,42 +97,45 @@ public class HomePage extends BasePage {
         System.out.println("You are trying to Login with empty email and password");
         System.out.println("Email field shows : " + emptyEmail.getText());
         System.out.println("Password field field shows : " + emptyPassword.getText());
-        return new HomePage(driver);
+        return this;
     }
 
-    public HomePage logOut(){
-        logInIntoSite(emailName,passwordData);
+    public HomePage logOut() {
+        //logInIntoSite(emailName,passwordData);
         logInButton.click();
         clickLogOutButton.click();
-        return new HomePage(driver);
+        return this;
     }
 
 
-    public WebElement getNameOfLoggedInAccount() {
-        return nameOfLoggedInAccount;
+    public String getNameOfLoggedInAccount() {
+        return nameOfLoggedInAccount.getText();
     }
 
-    public WebElement getEmptyEmail() {
-        return emptyEmail;
+    public boolean isErrorEmptyEmailDisplayed() {
+
+        return emptyEmail.isDisplayed();
     }
 
-    public WebElement getEmptyPassword() {
-        return emptyPassword;
+    public boolean isErrorEmptyPasswordDisplayed() {
+
+        return emptyPassword.isDisplayed();
     }
 
-    public WebElement getErrorLoginOrPassword() {
-        return errorLoginOrPassword;
+    public boolean isErrorLoginOrPasswordDisplayed() {
+        return errorLoginOrPassword.isDisplayed();
     }
 
-    public HomePage checkRussianLanguage (){
+    public HomePage checkRussianLanguage() {
         languageRU.click();
         System.out.println("Language is changed to Russian and title is : " + driver.getTitle());
-        return new HomePage(driver);
+        return this;
     }
-    public HomePage checkUkrainianLanguage (){
+
+    public HomePage checkUkrainianLanguage() {
         languageUA.click();
         System.out.println("Language is changed to Ukrainian and title is : " + driver.getTitle());
-        return new HomePage(driver);
+        return this;
     }
 
     public WebElement getLanguageUA() {

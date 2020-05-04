@@ -14,7 +14,7 @@ public class LanguageTests extends Browser {
 
     @BeforeClass
     public void setUp() {
-        WebDriver webDriver = Browser.getInstance();
+        WebDriver webDriver = Browser.Browsers.FIREFOX.create();
         homepage = new HomePage(webDriver);
     }
 

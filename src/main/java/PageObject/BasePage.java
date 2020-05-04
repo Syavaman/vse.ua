@@ -1,13 +1,12 @@
 package PageObject;
-
-import PageObject.HomePage.HomePage; // Не нужный импорт
+import PageObject.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
-
+    private Constants constant;
     protected WebDriver driver;
     @FindBy(xpath = "//span[@class='user-info']//a//span") // '//a//span' можно заменить на '//span', старайся делать локаторы максимально короткими
     private WebElement logInButton;
@@ -34,8 +33,8 @@ public class BasePage {
     public BasePage openPageAndlogIn() {
         driver.get("https://vse.ua");
         logInButton.click();
-        loginField.sendKeys(emailName);
-        passwordField.sendKeys(passwordData);
+        loginField.sendKeys(constant.emailName);
+        passwordField.sendKeys(constant.passwordData);
         clickLoginButton.click();
         try {
             Thread.sleep(1500); // ужс
@@ -46,9 +45,7 @@ public class BasePage {
         return new BasePage(driver);
     }
 
-    // Не храни тестовые данные в классе страницы, вынеси их отдельно (тот же енам или класс статических констант)
-    public String emailName = "syava1204@gmail.com";
-    public String passwordData = "Svyatik12";
-    public String searchShop = "Epicentr";
-    public String searchProduct = "Samsung";
+    // Не храни тестовые данные в классе страницы, вынеси их отдельно (тот же енам или класс статических констант) - Done
+
+
 }

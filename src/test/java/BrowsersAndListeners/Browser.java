@@ -16,11 +16,34 @@ import java.util.concurrent.TimeUnit;
 // Названия браузеров лучше хранить например в енаме, тогда мы точно будем уверены что используем корректрое название
 // конечно кажется что это слишком, все равно мы используем строки везде, но это обезовасит работу в будущем, вдруг
 // кто-то решит переписать класс синглтона и совершит ошибку? Минимизируем риски
-public class Browser { // Название в приципе нормально, но мб DriverFactory подошло бы чуть лучше
+public class Browser { // Название в приципе нормально, но мб DriverFactory подошло бы чуть лучше - хай покищо так буде
     public static WebDriver driver = null;
-
-    public static WebDriver getInstance() {
+    public enum Browsers {
+        CHROME {
+            public WebDriver create(){
+                System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\drivers\\chromedriver81.exe");
+                driver = new ChromeDriver();
+                driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+                driver.manage().window().maximize();
+                return driver;
+            }
+        },
+        FIREFOX {
+            public WebDriver create() {
+                System.setProperty("webdriver.gecko.driver", ".\\src\\main\\resources\\drivers\\geckodriver.exe");
+                driver = new FirefoxDriver();
+                driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+                driver.manage().window().maximize();
+                return driver;
+            }
+        };
+        public WebDriver create(){
+            return null;
+        }
+    }
+    /*public static WebDriver getInstance() {
         String browser = System.getProperty("browser");
+
         if (driver == null) {
             if (browser.equals("firefox")) {
                 System.setProperty("webdriver.gecko.driver", ".\\src\\main\\resources\\drivers\\geckodriver.exe");
@@ -36,7 +59,7 @@ public class Browser { // Название в приципе нормально,
             driver.manage().window().maximize();
         }
         return driver;
-    }
+    } */
 
     public void takeScreenOnFailure (String nameOfMethod){
         Date dateNew = new Date();
@@ -54,6 +77,6 @@ public class Browser { // Название в приципе нормально,
     public static void killDriverInstance(){
         driver.quit();
         driver = null;
-        System.out.println("RetryTests.Browser is closed");
+        System.out.println("Browser is closed");
     }
 }

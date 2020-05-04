@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static PageObject.Constants.wrongDataForSearch;
+
 public class SearchMenu extends BasePage {
     public SearchMenu(WebDriver driver) {
         super(driver);
@@ -22,8 +24,8 @@ public class SearchMenu extends BasePage {
     private WebElement  clearedSearchField;
     @FindBy (xpath = "//div[@class='search-info-head']")
     private WebElement wrongEnteredSearchResult;
-    // А вот я и нашла дату не в тестах) Не храни такое внутри страниц
-    private String wrongDataForSearch = "dasdasdasdasd";
+    // А вот я и нашла дату не в тестах) Не храни такое внутри страниц - Done
+
 
 
 

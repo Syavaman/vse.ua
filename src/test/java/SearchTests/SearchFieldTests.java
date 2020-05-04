@@ -1,5 +1,6 @@
 package SearchTests;
 import BrowsersAndListeners.Browser;
+import PageObject.Constants;
 import PageObject.Search.SearchMenu;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.openqa.selenium.WebDriver;
@@ -11,10 +12,10 @@ import org.testng.annotations.Test;
 
 public class SearchFieldTests {
     private SearchMenu searchField;
-
+    private Constants constant;
     @BeforeClass
     public void setUp() {
-        WebDriver webDriver = Browser.getInstance();
+        WebDriver webDriver = Browser.Browsers.FIREFOX.create();
         searchField = new SearchMenu(webDriver);
     }
 
@@ -25,7 +26,7 @@ public class SearchFieldTests {
 
     @Test
     public void verifySearchOption() {
-        searchField.fillSearchFieldWithData(searchField.searchProduct);
+        searchField.fillSearchFieldWithData(constant.searchProduct);
         String result = searchField.getSearchResult();
         // Магические строки
         Assert.assertTrue(result.contains("Samsung"), "Search feature does not work properly");
@@ -41,8 +42,8 @@ public class SearchFieldTests {
     }
 
     @Test
-    public void verifyToSmallSearchRequest(){
-        // Магические строки - shortSearchQuery
+    public void verifyShortSearchQuery(){
+        // Магические строки - shortSearchQuery - done!)
         searchField.fillSearchFieldWithData("1");
         String actualResult =searchField.getWrongEnteredSearchResult().getText();
         Assert.assertTrue(actualResult.contains("Слишком короткий запрос"),"Search with one character works");
