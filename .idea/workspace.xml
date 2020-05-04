@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c926af59-ebbd-4f84-97c1-a6dc45361bbb" name="Default Changelist" comment="+Some changes according to comments">
+    <list default="true" id="c926af59-ebbd-4f84-97c1-a6dc45361bbb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/HomePage/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/HomePage/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/PersonalAccount/FavoriteShops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/PersonalAccount/FavoriteShops.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/Search/SearchMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/Search/SearchMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrowsersAndListeners/Browser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrowsersAndListeners/Browser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTests/LanguageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests/LanguageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTests/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests/LoginTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PersonalAccountTests/FavoriteShopsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PersonalAccountTests/FavoriteShopsTests.java" afterDir="false" />
@@ -58,7 +58,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LoginTests">
+  <component name="RunManager" selected="TestNG.SearchFieldTests.verifySearchOptionWithInvalidData">
     <configuration name="C:/Users/msi7r/Desktop/vse.ua/testng.xml" type="TestNG" nameIsGenerated="true">
       <module name="vse.ua" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
@@ -76,16 +76,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="FavoriteShopsTests (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="vse.ua" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="HomePageTests.*" />
+          <option name="PATTERN" value="PersonalAccountTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="HomePageTests" />
-      <option name="MAIN_CLASS_NAME" value="HomePageTests.LoginTests" />
+      <option name="PACKAGE_NAME" value="PersonalAccountTests" />
+      <option name="MAIN_CLASS_NAME" value="PersonalAccountTests.FavoriteShopsTests" />
+      <option name="METHOD_NAME" value="addFavoriteShop" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="0" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FavoriteShopsTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="vse.ua" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PersonalAccountTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="PersonalAccountTests" />
+      <option name="MAIN_CLASS_NAME" value="PersonalAccountTests.FavoriteShopsTests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -93,18 +112,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTests.loginWithInvalidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="FavoriteShopsTests.addFavoriteShop (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="vse.ua" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="HomePageTests.*" />
+          <option name="PATTERN" value="PersonalAccountTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="HomePageTests" />
-      <option name="MAIN_CLASS_NAME" value="HomePageTests.LoginTests" />
-      <option name="METHOD_NAME" value="loginWithInvalidCredentials" />
+      <option name="PACKAGE_NAME" value="PersonalAccountTests" />
+      <option name="MAIN_CLASS_NAME" value="PersonalAccountTests.FavoriteShopsTests" />
+      <option name="METHOD_NAME" value="addFavoriteShop" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="0" />
       <properties />
       <listeners />
       <method v="2">
@@ -128,24 +148,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchFieldTests.verifySearchOption" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="vse.ua" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="SearchTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="SearchTests" />
-      <option name="MAIN_CLASS_NAME" value="SearchTests.SearchFieldTests" />
-      <option name="METHOD_NAME" value="verifySearchOption" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SearchFieldTests.verifySearchOptionWithInvalidData" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="vse.ua" />
       <extension name="coverage">
@@ -158,6 +160,7 @@
       <option name="MAIN_CLASS_NAME" value="SearchTests.SearchFieldTests" />
       <option name="METHOD_NAME" value="verifySearchOptionWithInvalidData" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="0" />
       <properties />
       <listeners />
       <method v="2">
@@ -166,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LoginTests" />
-        <item itemvalue="TestNG.LoginTests.loginWithInvalidCredentials" />
-        <item itemvalue="TestNG.SearchFieldTests" />
         <item itemvalue="TestNG.SearchFieldTests.verifySearchOptionWithInvalidData" />
-        <item itemvalue="TestNG.SearchFieldTests.verifySearchOption" />
+        <item itemvalue="TestNG.SearchFieldTests" />
+        <item itemvalue="TestNG.FavoriteShopsTests" />
+        <item itemvalue="TestNG.FavoriteShopsTests.addFavoriteShop (1)" />
+        <item itemvalue="TestNG.FavoriteShopsTests (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -290,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586108722435</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="+Some changes according to comments">
+      <created>1588588234837</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1588588234837</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -352,39 +362,39 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="273" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1585832780000" />
-    <state x="2285" y="10" key="CommitChangelistDialog2" timestamp="1588588210269">
+    <state x="2285" y="10" key="CommitChangelistDialog2" timestamp="1588588234039">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="292" y="8" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1586018722343" />
-    <state x="2285" y="10" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588588210269" />
+    <state x="2285" y="10" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588588234039" />
     <state x="292" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586108721846" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1588236167236">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588236167236" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1588588210323">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1588599530637">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588236570016" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588588210323" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588599530637" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586117704839" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1588588210323">
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1588599530637">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588236570016" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588588210323" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588599530637" />
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586117704839" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1588588210323">
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1588599530637">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588236570016" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588588210323" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588599530637" />
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586117704839" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1588588210323">
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1588599530637">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588236570016" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588588210323" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588599530637" />
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586117704839" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1585751031086">
       <screen x="0" y="0" width="1536" height="824" />

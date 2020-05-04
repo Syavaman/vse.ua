@@ -113,12 +113,10 @@ public class HomePage extends BasePage {
     }
 
     public boolean isErrorEmptyEmailDisplayed() {
-
         return emptyEmail.isDisplayed();
     }
 
     public boolean isErrorEmptyPasswordDisplayed() {
-
         return emptyPassword.isDisplayed();
     }
 
@@ -138,8 +136,8 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public WebElement getLanguageUA() {
-        return languageUA;
+    public String getLanguage() {
+        return getAllPrices().getText();
     }
 
     public WebElement getAllPrices() {

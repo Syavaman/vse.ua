@@ -28,35 +28,35 @@ public class SearchFieldTests {
     public void verifySearchOption() {
         searchField.fillSearchFieldWithData(constant.searchProduct);
         String result = searchField.getSearchResult();
-        // Магические строки
+        // Магические строки -??
         Assert.assertTrue(result.contains("Samsung"), "Search feature does not work properly");
     }
     @Test
     public void verifySearchOptionWithInvalidData() {
-        searchField.fillSearchFieldWithData(searchField.getWrongDataForSearch());
+        searchField.fillSearchFieldWithData(constant.wrongDataForSearch);
         // Можно вынести в отдельный метод создание ошибки. Например есть отдельный класс, который хранит
-        // инфу либо о всех ошибках, либо только по поиску например. И из него все брать для тестов
-        String expectedResult = String.format("Ничего не найдено по запросу "+searchField.getWrongDataForSearch());
-        String actualResult = searchField.getWrongEnteredSearchResult().getText();
+        // инфу либо о всех ошибках, либо только по поиску например. И из него все брать для тестов - хз, щось переробив
+        String expectedResult = searchField.getWrongDataForSearch();
+        String actualResult = searchField.getWrongEnteredSearchResult();
         Assert.assertEquals(actualResult,expectedResult,"Some results were shown for incorrect search");
     }
 
     @Test
     public void verifyShortSearchQuery(){
         // Магические строки - shortSearchQuery - done!)
-        searchField.fillSearchFieldWithData("1");
-        String actualResult =searchField.getWrongEnteredSearchResult().getText();
+        searchField.fillSearchFieldWithData(constant.shortQuery);
+        String actualResult =searchField.getWrongEnteredSearchResult();;
         Assert.assertTrue(actualResult.contains("Слишком короткий запрос"),"Search with one character works");
     }
 
     @Test
     public void verifyClearOfSearchMenu(){
-        searchField.verifyClearingOfSearch();
+        searchField.ClearingOfSearch();
         String result = searchField.getClearedSearchField();
-       Assert.assertFalse(result.contains("Philips"), "Clear of search does not work");
+       Assert.assertFalse(result.contains(constant.searchProduct), "Clear of search does not work");
     }
 
-    @AfterClass
+   // @AfterClass
     public void tearDown() {
         Browser.killDriverInstance();
     }

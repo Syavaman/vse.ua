@@ -41,7 +41,7 @@ public class LoginTests extends Browser {
     @Test(priority = 1)
     public void loginWithEmptyPassword() {
         homepage.logInIntoSiteWithInvalidData(constant.emailName);
-        Assert.assertEquals(homepage.isErrorLoginOrPasswordDisplayed(), true, "Error about wrong data was not displayed");
+        Assert.assertEquals(homepage.isErrorEmptyPasswordDisplayed(), true, "Error about wrong data was not displayed");
     }
 
     @Test(priority = 1)
@@ -51,7 +51,7 @@ public class LoginTests extends Browser {
     }
 
     // Этот тест явно зависит от другого теста. Логику я понимаю, но стоит все же стараться делать тесты не зависимыми друг от друга
-    // Например скорее всего я не смогу просто запустить этот тест, потому что пользователь не залогинен и тест упадет - переписа метод, але логіка для логаута як на мене то ОК
+    // Например скорее всего я не смогу просто запустить этот тест, потому что пользователь не залогинен и тест упадет -  логіка для логаута як на мене то ОК
     @Test(priority = 3)
     public void logOutFromSite() {
         homepage.logOut();

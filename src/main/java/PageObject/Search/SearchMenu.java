@@ -1,6 +1,7 @@
 package PageObject.Search;
 
 import PageObject.BasePage;
+import PageObject.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import static PageObject.Constants.wrongDataForSearch;
 
 public class SearchMenu extends BasePage {
+    private Constants constant;
     public SearchMenu(WebDriver driver) {
         super(driver);
     }
@@ -44,20 +46,20 @@ public class SearchMenu extends BasePage {
         return clearedSearchField.getText();
     }
 
-    public SearchMenu verifyClearingOfSearch(){
+    public SearchMenu  ClearingOfSearch(){
         // А как ты тут проверяешь что поле очистилось? тут ты его просто
-        // очищаешь на сколько я вижу. к тому же делаешь это двумя способами, хотя по идее кнопки бы хватило, без обновления страницы
-        fillSearchFieldWithData("Philips");
+        // очищаешь на сколько я вижу. к тому же делаешь это двумя способами, хотя по идее кнопки бы хватило, без обновления страницы - провіряю вже під час тесту
+        fillSearchFieldWithData(constant.searchProduct);
         clearSearchButton.click();
         driver.navigate().refresh();
-        return new SearchMenu(driver);
+        return this;
     }
 
-    public WebElement getWrongEnteredSearchResult() {
-        return wrongEnteredSearchResult;
+    public String getWrongEnteredSearchResult() {
+        return wrongEnteredSearchResult.getText();
     }
 
     public String getWrongDataForSearch() {
-        return wrongDataForSearch;
+        return String.format("Ничего не найдено по запросу "+ constant.wrongDataForSearch);
     }
 }

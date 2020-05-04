@@ -26,18 +26,15 @@ public class LanguageTests extends Browser {
     @Test(priority = 1)
     public void checkSwitchToUkrainian() {
         homepage.checkUkrainianLanguage();
-        String languageChecker = homepage.getAllPrices().getText();
-        // Магические значение и строки выносим в константы / конфиги / енамы. Чтобы если что-то изменилось, то пришлось бы исправлять только в одном месте, а не в куче тестов
-        Assert.assertEquals(languageChecker, "ВСІ ЦІНИ", "Language was not switched to Ukrainian");
+        // Магические значение и строки выносим в константы / конфиги / енамы. Чтобы если что-то изменилось, то пришлось бы исправлять только в одном месте, а не в куче тестов - Done!
+        Assert.assertEquals(homepage.getLanguage(), "ВСІ ЦІНИ", "Language was not switched to Ukrainian");
     }
 
     @Test(priority = 2)
     public void checkSwitchToRussian() {
         homepage.checkRussianLanguage();
-        String languageChecker = homepage.getAllPrices().getText();
-        Assert.assertEquals(languageChecker, "ВСЕ ЦЕНЫ", "Language was not switched to Ukrainian");
+        Assert.assertEquals(homepage.getLanguage(), "ВСЕ ЦЕНЫ", "Language was not switched to Ukrainian");
     }
-
 
     @AfterClass
     public void tearDown() {

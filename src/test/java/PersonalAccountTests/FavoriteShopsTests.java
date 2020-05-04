@@ -24,11 +24,8 @@ public class FavoriteShopsTests extends Browser {
 
     // Вижу такие шаги перед тестами:
     // Открыть страницу -> Залогинится -> Открыть страницу опять
-    // Это точно нужно?
-    @BeforeMethod
-    public void openBasePage() {
-        favoriteShop.openPage();
-    }
+    // Это точно нужно? - не нужно, Done)
+
 
     // Тест добавляет в фавориты магаз, но не удаляет сам.
     // Если тесты вносят изменения в базу, юзера, предмет, что угодно - после теста мы удаляем наши следы -два окремих теста, перший добавляє в магазин, а наступний удаляє його
@@ -36,7 +33,7 @@ public class FavoriteShopsTests extends Browser {
     public void addFavoriteShop() {
         // А потом в этом методе ты снова открываешь страницу. Поиск на сколько я помню есть везде, поэтому страницу 50 раз одну и ту же
         // можно не открывать)
-        favoriteShop.addToFavorites(constant.searchShop);
+        favoriteShop.addShopToFavorites(constant.searchShop);
         WebElement addedFavoriteShop = favoriteShop.getFavoriteShopLogo();
         Assert.assertTrue(addedFavoriteShop.isDisplayed(), "Shop was not added to favorites");
     }
@@ -49,7 +46,7 @@ public class FavoriteShopsTests extends Browser {
     }
 
 
-    @AfterClass
+   @AfterClass
     public void tearDown() {
         Browser.killDriverInstance();
     }

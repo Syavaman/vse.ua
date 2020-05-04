@@ -7,4 +7,5 @@ public class Constants {
     public static String searchShop = "Epicentr";
     public static String searchProduct = "Samsung";
     public static String wrongDataForSearch = "dasdasdasdasd";
+    public static String shortQuery = "1";
 }
