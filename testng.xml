@@ -14,7 +14,7 @@
             <class name="HomePageTests.LanguageTests"/>
             <class name="PersonalAccountTests.FavoriteShopsTests"/>
             <class name="SearchTests.SearchFieldTests"/>
-            <class name="BrowsersAndListeners.TestRetryXmlTestCases"/>
+
         </classes>
     </test>
 </suite>
