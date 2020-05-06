@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c926af59-ebbd-4f84-97c1-a6dc45361bbb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/PersonalAccount/FavoriteShops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/PersonalAccount/FavoriteShops.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/Search/SearchMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/Search/SearchMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrowsersAndListeners/Browser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrowsersAndListeners/Browser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrowsersAndListeners/RetryListenerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrowsersAndListeners/RetryListenerClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTests/LanguageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests/LanguageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTests/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests/LoginTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PersonalAccountTests/FavoriteShopsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PersonalAccountTests/FavoriteShopsTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SearchTests/SearchFieldTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SearchTests/SearchFieldTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588599560383</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="+ Enum Browsers&#10;+ New class for retry tests on failure">
+      <created>1588776538883</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1588776538883</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -329,7 +326,8 @@
     <MESSAGE value="+Favorite shops test" />
     <MESSAGE value="+Search Tests" />
     <MESSAGE value="+Some changes according to comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="+Some changes according to comments" />
+    <MESSAGE value="+ Enum Browsers&#10;+ New class for retry tests on failure" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ Enum Browsers&#10;+ New class for retry tests on failure" />
   </component>
   <component name="WindowStateProjectService">
     <state x="477" y="48" key="#&lt;default&gt;" timestamp="1585152060357">
@@ -373,10 +371,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="273" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1585832780000" />
-    <state x="2285" y="10" key="CommitChangelistDialog2" timestamp="1588599559720">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="292" y="8" key="CommitChangelistDialog2" timestamp="1588776537845">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="292" y="8" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1586018722343" />
+    <state x="292" y="8" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588776537845" />
     <state x="2285" y="10" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588599559720" />
     <state x="292" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586108721846" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1588236167236">
