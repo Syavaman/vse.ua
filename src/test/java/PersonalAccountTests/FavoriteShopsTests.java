@@ -17,7 +17,7 @@ public class FavoriteShopsTests extends Browser {
 
     @BeforeClass
     public void setUp() {
-        WebDriver webDriver = Browser.Browsers.FIREFOX.create();
+        WebDriver webDriver = Browser.getInstance();
         favoriteShop = new FavoriteShops(webDriver);
         favoriteShop.openPageAndlogIn();
     }

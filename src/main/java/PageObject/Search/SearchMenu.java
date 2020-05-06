@@ -51,7 +51,7 @@ public class SearchMenu extends BasePage {
         // очищаешь на сколько я вижу. к тому же делаешь это двумя способами, хотя по идее кнопки бы хватило, без обновления страницы - провіряю вже під час тесту
         fillSearchFieldWithData(constant.searchProduct);
         clearSearchButton.click();
-        driver.navigate().refresh();
+
         return this;
     }
 

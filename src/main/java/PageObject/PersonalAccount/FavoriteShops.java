@@ -47,7 +47,6 @@ public class FavoriteShops extends BasePage {
         searchField.click();
         searchField.sendKeys(searchData);
         searchButton.click();
-
         List<WebElement> shopList=listOfShops.findElements(By.tagName("li"));
         for (WebElement li : shopList) {
             if (li.getText().contains("EpiCentra")) {

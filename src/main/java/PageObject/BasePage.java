@@ -16,8 +16,7 @@ public class BasePage {
     private WebElement passwordField;
     @FindBy(xpath = "//button[@id='loginButton']")
     private WebElement clickLoginButton;
-    @FindBy (xpath = "//a[contains(text(),'RU')]")
-    private WebElement languageRU;
+
 
     public BasePage(WebDriver driver) {
         PageFactory.initElements(driver, this);

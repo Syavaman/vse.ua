@@ -18,54 +18,33 @@ import java.util.concurrent.TimeUnit;
 // кто-то решит переписать класс синглтона и совершит ошибку? Минимизируем риски
 public class Browser { // Название в приципе нормально, но мб DriverFactory подошло бы чуть лучше - хай покищо так буде
     public static WebDriver driver = null;
-    public enum Browsers {
-        CHROME {
-            public WebDriver create(){
-                System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\drivers\\chromedriver81.exe");
-                driver = new ChromeDriver();
-                driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-                driver.manage().window().maximize();
-                return driver;
-            }
-        },
-        FIREFOX {
-            public WebDriver create() {
-                System.setProperty("webdriver.gecko.driver", ".\\src\\main\\resources\\drivers\\geckodriver.exe");
-                driver = new FirefoxDriver();
-                driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-                driver.manage().window().maximize();
-                return driver;
-            }
-        };
-        public WebDriver create(){
-            return null;
-        }
-    }
-    /*public static WebDriver getInstance() {
-        String browser = System.getProperty("browser");
 
+    public enum Browsers {chrome, firefox};
+
+    public static WebDriver getInstance() {
+        String browser = System.getProperty("browser");
         if (driver == null) {
-            if (browser.equals("firefox")) {
+            if (browser.equals(Browsers.firefox.name())) {
                 System.setProperty("webdriver.gecko.driver", ".\\src\\main\\resources\\drivers\\geckodriver.exe");
                 driver = new FirefoxDriver();
-            } else if (browser.equals("chrome")) {
+            } else if (browser.equals(Browsers.chrome.name())) {
                 System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\drivers\\chromedriver81.exe");
                 driver = new ChromeDriver();
             } else {
-                throw new UnsupportedOperationException("Unknown browser" + browser);
+                throw new UnsupportedOperationException("Unknown browser " + browser);
             }
-            System.out.println("Instance of driver is : "+ browser);
+            System.out.println("Instance of driver is : " + browser);
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             driver.manage().window().maximize();
         }
         return driver;
-    } */
+    }
 
-    public void takeScreenOnFailure (String nameOfMethod){
+    public void takeScreenOnFailure(String nameOfMethod) {
         Date dateNew = new Date();
         SimpleDateFormat format = new SimpleDateFormat("hh_mm_ss");
         String fileName = nameOfMethod + format.format(dateNew) + ".png";
-        File screenshot1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File screenshot1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(screenshot1, new File("D:\\Screenshots\\" + fileName));
             System.out.println("Screenshot with " + fileName + " was created in D:\\Screenshots\\");
@@ -74,7 +53,7 @@ public class Browser { // Название в приципе нормально,
         }
     }
 
-    public static void killDriverInstance(){
+    public static void killDriverInstance() {
         driver.quit();
         driver = null;
         System.out.println("Browser is closed");

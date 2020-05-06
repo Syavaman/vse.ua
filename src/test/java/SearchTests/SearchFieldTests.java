@@ -15,7 +15,7 @@ public class SearchFieldTests {
     private Constants constant;
     @BeforeClass
     public void setUp() {
-        WebDriver webDriver = Browser.Browsers.FIREFOX.create();
+        WebDriver webDriver = Browser.getInstance();
         searchField = new SearchMenu(webDriver);
     }
 
@@ -29,7 +29,7 @@ public class SearchFieldTests {
         searchField.fillSearchFieldWithData(constant.searchProduct);
         String result = searchField.getSearchResult();
         // Магические строки -??
-        Assert.assertTrue(result.contains("Samsung"), "Search feature does not work properly");
+        Assert.assertTrue(result.contains(constant.searchProduct), "Search feature does not work properly");
     }
     @Test
     public void verifySearchOptionWithInvalidData() {
@@ -56,7 +56,7 @@ public class SearchFieldTests {
        Assert.assertFalse(result.contains(constant.searchProduct), "Clear of search does not work");
     }
 
-   // @AfterClass
+   @AfterClass
     public void tearDown() {
         Browser.killDriverInstance();
     }

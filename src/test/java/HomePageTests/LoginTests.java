@@ -13,7 +13,7 @@ public class LoginTests extends Browser {
 
     @BeforeClass
     public void setUp() {
-        WebDriver webDriver = Browser.Browsers.FIREFOX.create();
+       WebDriver webDriver = Browser.getInstance();
         homepage = new HomePage(webDriver);
         constant = new Constants();
     }
