@@ -16,15 +16,10 @@ public class FavoriteShops extends BasePage {
 
     @FindBy(className = "user-info")
     private WebElement clickUserInfo;
-    @FindBy(xpath = "//*[local-name()='svg']//following::span")
+    @FindBy(xpath = "//div[@class='header-menu']//li[2]")
     private WebElement shopsMenu;
-
-    // После поиска у нас выпадает очень много магазинов, брать любой не лучшая идея
-    // Попробуй поработать со списком веб элементов. Нужно будет создать класс, который опишет один магазин
-    // и получать их список, а вот из списка уже выбирать - не докінця зрозумів
     @FindBy(xpath = "//ul[@class='magazine__list']")
     private WebElement listOfShops;
-
     @FindBy(xpath = "//a[contains(@class,'favorite-toggle')]")
     private WebElement addTofavorite;
     @FindBy(xpath = "//div[@class='links dropdown']//li[1]//a[1]//span[1]") // О_О - привязався як мін
@@ -49,7 +44,7 @@ public class FavoriteShops extends BasePage {
         searchButton.click();
         List<WebElement> shopList=listOfShops.findElements(By.tagName("li"));
         for (WebElement li : shopList) {
-            if (li.getText().contains("EpiCentra")) {
+            if (li.getText().contains(searchData)) {
                 li.click();
                 break;
             }

@@ -26,9 +26,6 @@ public class SearchMenu extends BasePage {
     private WebElement  clearedSearchField;
     @FindBy (xpath = "//div[@class='search-info-head']")
     private WebElement wrongEnteredSearchResult;
-    // А вот я и нашла дату не в тестах) Не храни такое внутри страниц - Done
-
-
 
 
     public SearchMenu fillSearchFieldWithData(String data) {
@@ -47,11 +44,8 @@ public class SearchMenu extends BasePage {
     }
 
     public SearchMenu  ClearingOfSearch(){
-        // А как ты тут проверяешь что поле очистилось? тут ты его просто
-        // очищаешь на сколько я вижу. к тому же делаешь это двумя способами, хотя по идее кнопки бы хватило, без обновления страницы - провіряю вже під час тесту
         fillSearchFieldWithData(constant.searchProduct);
         clearSearchButton.click();
-
         return this;
     }
 

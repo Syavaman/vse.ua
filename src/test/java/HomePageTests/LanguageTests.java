@@ -8,14 +8,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class LanguageTests extends Browser {
     private HomePage homepage;
 
     @BeforeClass
     public void setUp() {
-      WebDriver webDriver = Browser.getInstance();
-      homepage = new HomePage(webDriver);
+        WebDriver webDriver = Browser.getInstance();
+        homepage = new HomePage(webDriver);
     }
 
     @BeforeMethod
@@ -23,18 +24,16 @@ public class LanguageTests extends Browser {
         homepage.openPage();
     }
 
-    @Test(priority = 1)
-    public void checkSwitchToUkrainian() {
+    @Test
+    public void checkSwitchBetweenLanguages() {
+        SoftAssert soft = new SoftAssert();
         homepage.checkUkrainianLanguage();
-        // Магические значение и строки выносим в константы / конфиги / енамы. Чтобы если что-то изменилось, то пришлось бы исправлять только в одном месте, а не в куче тестов - Done!
-        Assert.assertEquals(homepage.getLanguage(), "ВСІ ЦІНИ", "Language was not switched to Ukrainian");
+        soft.assertEquals(homepage.getLanguage(), "ВСІ ЦІНИ", "Language was not switched to Ukrainian");
+        homepage.checkRussianLanguage();
+        soft.assertEquals(homepage.getLanguage(), "ВСЕ ЦЕНЫ", "Language was not switched to Ukrainian");
+        soft.assertAll();
     }
 
-    @Test(priority = 2)
-    public void checkSwitchToRussian() {
-        homepage.checkRussianLanguage();
-        Assert.assertEquals(homepage.getLanguage(), "ВСЕ ЦЕНЫ", "Language was not switched to Ukrainian");
-    }
 
     @AfterClass
     public void tearDown() {

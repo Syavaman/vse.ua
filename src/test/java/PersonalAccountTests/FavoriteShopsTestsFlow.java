@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class FavoriteShopsTests extends Browser {
+public class FavoriteShopsTestsFlow extends Browser {
     private FavoriteShops favoriteShop;
     private Constants constant;
 
@@ -22,17 +22,8 @@ public class FavoriteShopsTests extends Browser {
         favoriteShop.openPageAndlogIn();
     }
 
-    // Вижу такие шаги перед тестами:
-    // Открыть страницу -> Залогинится -> Открыть страницу опять
-    // Это точно нужно? - не нужно, Done)
-
-
-    // Тест добавляет в фавориты магаз, но не удаляет сам.
-    // Если тесты вносят изменения в базу, юзера, предмет, что угодно - после теста мы удаляем наши следы -два окремих теста, перший добавляє в магазин, а наступний удаляє його
     @Test(priority = 1)
     public void addFavoriteShop() {
-        // А потом в этом методе ты снова открываешь страницу. Поиск на сколько я помню есть везде, поэтому страницу 50 раз одну и ту же
-        // можно не открывать)
         favoriteShop.addShopToFavorites(constant.searchShop);
         WebElement addedFavoriteShop = favoriteShop.getFavoriteShopLogo();
         Assert.assertTrue(addedFavoriteShop.isDisplayed(), "Shop was not added to favorites");

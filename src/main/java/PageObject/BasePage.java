@@ -1,14 +1,16 @@
 package PageObject;
-import PageObject.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
     private Constants constant;
     protected WebDriver driver;
-    @FindBy(xpath = "//span[@class='user-info']//a//span") // '//a//span' можно заменить на '//span', старайся делать локаторы максимально короткими
+    @FindBy(xpath = "//span[@class='user-info']//a//span")
     private WebElement logInButton;
     @FindBy(xpath = "//input[@id='login-form-login']")
     private WebElement loginField;
@@ -16,6 +18,8 @@ public class BasePage {
     private WebElement passwordField;
     @FindBy(xpath = "//button[@id='loginButton']")
     private WebElement clickLoginButton;
+    @FindBy(className = "user-info")
+    private WebElement nameOfLoggedInAccount;
 
 
     public BasePage(WebDriver driver) {
@@ -27,24 +31,21 @@ public class BasePage {
         driver.get("https://vse.ua");
     }
 
-    //SOLID -> S -> Single Responsibility -> 1 метод - 1 действие. Этот метод и открывает страницу, и логинится. Зачем?) Просто в начале вызываешь метод открытия страницы, а потом логин
-    // А вдруг ты будешь уже давно на странице, а потом понадобится залогинится (если нужна еще причина для разделения метода)
     public BasePage openPageAndlogIn() {
-        driver.get("https://vse.ua");
+        openPage();
         logInButton.click();
         loginField.sendKeys(constant.emailName);
         passwordField.sendKeys(constant.passwordData);
         clickLoginButton.click();
-        try {
-            Thread.sleep(1500); // ужс
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        driver.navigate().refresh();
-        return new BasePage(driver);
+        String NickName = constant.emailName.substring(0,constant.emailName.indexOf("@"));
+        Wait<WebDriver> wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.textToBePresentInElement(nameOfLoggedInAccount, NickName));
+        return this;
     }
 
-    // Не храни тестовые данные в классе страницы, вынеси их отдельно (тот же енам или класс статических констант) - Done
+    public String getTitleName() {
+        return driver.getTitle();
+    }
 
 
 }
