@@ -10,22 +10,23 @@ public class LoginPageErrors extends BasePage {
         super(driver);
     }
     @FindBy(xpath = "//div[@class='form-group field-login-form-password required has-error']//div[@class='dropdown-hint afterLeft']")
-    private WebElement errorLoginOrPassword;
-    @FindBy(xpath = "//div[@class='form-group field-login-form-login required has-error']//div[@class='dropdown-hint afterLeft']")
+    private WebElement error;
+    @FindBy(xpath = "//div[contains(text(),'Необходимо заполнить «Электронная почта».')]")
     private WebElement emptyEmail;
-    @FindBy(xpath = "//div[@class='form-group field-login-form-password required has-error']//div[@class='dropdown-hint afterLeft']")
-    private WebElement emptyPassword;
 
     public boolean isErrorEmptyEmailDisplayed() {
-        return emptyEmail.isDisplayed();
+        String emptyEmailError = "Необходимо заполнить «Электронная почта».";
+        return emptyEmailError.equals(emptyEmail.getText());
     }
 
     public boolean isErrorEmptyPasswordDisplayed() {
-        return emptyPassword.isDisplayed();
+        String emptyPassword = "Необходимо заполнить «Пароль».";
+        return emptyPassword.equals(error.getText());
     }
 
     public boolean isErrorLoginOrPasswordDisplayed() {
-        return errorLoginOrPassword.isDisplayed();
+        String incorrectLoginOrPassword = "Неверное имя пользователя или пароль";
+        return incorrectLoginOrPassword.equals(error.getText());
     }
 
 

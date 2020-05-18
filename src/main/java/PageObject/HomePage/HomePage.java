@@ -16,12 +16,13 @@ import static com.sun.org.apache.xml.internal.serialize.LineSeparator.Web;
 
 public class HomePage extends BasePage {
     private Constants constant;
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
 
-    @FindBy(xpath = "//span[@class='user-info']//a//span")
+    @FindBy(xpath = "//span[@class='user-info']")
     private WebElement logInButton;
     @FindBy(xpath = "//input[@id='login-form-login']")
     private WebElement loginField;
@@ -45,13 +46,12 @@ public class HomePage extends BasePage {
     }
 
 
-
     public HomePage logInIntoSite(String email, String password) {
         logInButton.click();
         loginField.sendKeys(email);
         passwordField.sendKeys(password);
         clickLoginButton.click();
-        String NickName = email.substring(0,email.indexOf("@"));
+        String NickName = email.substring(0, email.indexOf("@"));
         Wait<WebDriver> wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.textToBePresentInElement(nameOfLoggedInAccount, NickName));
         return this;
@@ -62,21 +62,6 @@ public class HomePage extends BasePage {
         loginField.sendKeys(email);
         passwordField.sendKeys(password);
         clickLoginButton.click();
-        return this;
-    }
-
-    public HomePage logInIntoSiteWithInvalidData(String email) {
-        logInButton.click();
-        loginField.sendKeys(email);
-        clickLoginButton.click();
-        System.out.println("You are trying to Login with empty password");
-        return this;
-    }
-
-    public HomePage logInIntoSiteWithInvalidData() {
-        logInButton.click();
-        clickLoginButton.click();
-        System.out.println("You are trying to Login with empty email and password");
         return this;
     }
 
@@ -103,10 +88,7 @@ public class HomePage extends BasePage {
     }
 
     public String getLanguage() {
-        return getAllPrices().getText();
+        return allPrices.getText();
     }
 
-    public WebElement getAllPrices() {
-        return allPrices;
-    }
 }

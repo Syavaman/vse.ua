@@ -39,13 +39,13 @@ public class LoginTestsFlow extends Browser {
 
     @Test(priority = 1)
     public void loginWithEmptyPassword() {
-        homepage.logInIntoSiteWithInvalidData(constant.emailName);
+        homepage.logInIntoSiteWithInvalidData(constant.emailName,constant.emptyField);
         Assert.assertEquals(loginError.isErrorEmptyPasswordDisplayed(), true, "Error about wrong data was not displayed");
     }
 
     @Test(priority = 1)
     public void loginWithEmptyCredentials() {
-        homepage.logInIntoSiteWithInvalidData();
+        homepage.logInIntoSiteWithInvalidData(constant.emptyField,constant.emptyField);
         Assert.assertEquals(loginError.isErrorEmptyEmailDisplayed(), true, "Error about wrong data was not displayed");
     }
 

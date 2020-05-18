@@ -16,13 +16,13 @@ public class FavoriteShops extends BasePage {
 
     @FindBy(className = "user-info")
     private WebElement clickUserInfo;
-    @FindBy(xpath = "//div[@class='header-menu']//li[2]")
+    @FindBy(xpath = "//div[@class='header-menu']//a[@href='/fm/']")
     private WebElement shopsMenu;
     @FindBy(xpath = "//ul[@class='magazine__list']")
     private WebElement listOfShops;
     @FindBy(xpath = "//a[contains(@class,'favorite-toggle')]")
     private WebElement addTofavorite;
-    @FindBy(xpath = "//div[@class='links dropdown']//li[1]//a[1]//span[1]") // О_О - привязався як мін
+    @FindBy(xpath = "//div[@class='links dropdown']//a[contains(@href, 'favorite-firm')]")
     private WebElement favoriteShops;
     @FindBy(xpath = "//div[@class='po-magazine-logo']//a//img")
     private WebElement favoriteShopLogo;
@@ -37,7 +37,7 @@ public class FavoriteShops extends BasePage {
 
 
 
-    public FavoriteShops addShopToFavorites(String searchData) { // addShopToFavorites - done
+    public FavoriteShops addShopToFavorites(String searchData) {
         shopsMenu.click();
         searchField.click();
         searchField.sendKeys(searchData);

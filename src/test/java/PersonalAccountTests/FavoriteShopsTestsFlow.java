@@ -19,7 +19,7 @@ public class FavoriteShopsTestsFlow extends Browser {
     public void setUp() {
         WebDriver webDriver = Browser.getInstance();
         favoriteShop = new FavoriteShops(webDriver);
-        favoriteShop.openPageAndlogIn();
+        favoriteShop.logIn();
     }
 
     @Test(priority = 1)

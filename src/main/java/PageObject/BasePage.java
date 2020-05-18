@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
     private Constants constant;
     protected WebDriver driver;
-    @FindBy(xpath = "//span[@class='user-info']//a//span")
+    @FindBy(xpath = "//span[@class='user-info']")
     private WebElement logInButton;
     @FindBy(xpath = "//input[@id='login-form-login']")
     private WebElement loginField;
@@ -31,7 +31,7 @@ public class BasePage {
         driver.get("https://vse.ua");
     }
 
-    public BasePage openPageAndlogIn() {
+    public BasePage logIn() {
         openPage();
         logInButton.click();
         loginField.sendKeys(constant.emailName);
