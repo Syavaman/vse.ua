@@ -39,7 +39,7 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[contains(text(),'UA')]")
     private WebElement languageUA;
     @FindBy(xpath = "//div[@class='logo']//span[1]")
-    private WebElement allPrices;
+    private WebElement languageHeading;
 
     public String getAccountName() {
         return constant.emailName.substring(0, constant.emailName.indexOf("@"));
@@ -88,7 +88,7 @@ public class HomePage extends BasePage {
     }
 
     public String getLanguage() {
-        return allPrices.getText();
+        return languageHeading.getText();
     }
 
 }

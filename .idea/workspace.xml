@@ -3,19 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c926af59-ebbd-4f84-97c1-a6dc45361bbb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/HomePage/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/HomePage/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/PersonalAccount/FavoriteShops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/PersonalAccount/FavoriteShops.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/Search/SearchMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PageObject/Search/SearchMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrowsersAndListeners/Browser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrowsersAndListeners/Browser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrowsersAndListeners/CustomListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrowsersAndListeners/CustomListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrowsersAndListeners/RetryListenerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrowsersAndListeners/RetryListenerClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTests/LanguageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests/LanguageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTests/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests/LoginTestsFlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PersonalAccountTests/FavoriteShopsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PersonalAccountTests/FavoriteShopsTestsFlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SearchTests/SearchFieldTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SearchTests/SearchFieldTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,24 +102,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LanguageTests.checkSwitchBetweenLanguages" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="vse.ua" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="HomePageTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="HomePageTests" />
-      <option name="MAIN_CLASS_NAME" value="HomePageTests.LanguageTests" />
-      <option name="METHOD_NAME" value="checkSwitchBetweenLanguages" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LoginTestsFlow" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="vse.ua" />
       <extension name="coverage">
@@ -150,7 +119,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTestsFlow.loginWithValidCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTestsFlow.loginWithEmptyCredentials" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="vse.ua" />
       <extension name="coverage">
         <pattern>
@@ -160,7 +129,25 @@
       </extension>
       <option name="PACKAGE_NAME" value="HomePageTests" />
       <option name="MAIN_CLASS_NAME" value="HomePageTests.LoginTestsFlow" />
-      <option name="METHOD_NAME" value="loginWithValidCredentials" />
+      <option name="METHOD_NAME" value="loginWithEmptyCredentials" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTestsFlow.loginWithEmptyPassword" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="vse.ua" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="HomePageTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="HomePageTests" />
+      <option name="MAIN_CLASS_NAME" value="HomePageTests.LoginTestsFlow" />
+      <option name="METHOD_NAME" value="loginWithEmptyPassword" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -170,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LanguageTests" />
         <item itemvalue="TestNG.LoginTestsFlow" />
+        <item itemvalue="TestNG.LoginTestsFlow.loginWithEmptyCredentials" />
+        <item itemvalue="TestNG.LoginTestsFlow.loginWithEmptyPassword" />
         <item itemvalue="TestNG.FavoriteShopsTestsFlow" />
-        <item itemvalue="TestNG.LoginTestsFlow.loginWithValidCredentials" />
-        <item itemvalue="TestNG.LanguageTests.checkSwitchBetweenLanguages" />
+        <item itemvalue="TestNG.LanguageTests" />
       </list>
     </recent_temporary>
   </component>
@@ -329,7 +316,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588777702969</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="+ Remakes according to Skype Call">
+      <created>1589202682626</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1589202682626</updated>
+    </task>
+    <task id="LOCAL-00022" summary="+ Remakes according to last Skype call">
+      <created>1589806610731</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1589806610731</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -348,7 +349,9 @@
     <MESSAGE value="+Search Tests" />
     <MESSAGE value="+Some changes according to comments" />
     <MESSAGE value="+ Enum Browsers&#10;+ New class for retry tests on failure" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ Enum Browsers&#10;+ New class for retry tests on failure" />
+    <MESSAGE value="+ Remakes according to Skype Call" />
+    <MESSAGE value="+ Remakes according to last Skype call" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ Remakes according to last Skype call" />
   </component>
   <component name="WindowStateProjectService">
     <state x="477" y="48" key="#&lt;default&gt;" timestamp="1585152060357">
@@ -392,40 +395,40 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="273" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1585832780000" />
-    <state x="292" y="0" key="CommitChangelistDialog2" timestamp="1588777701880">
+    <state x="292" y="0" key="CommitChangelistDialog2" timestamp="1589806609939">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="292" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588777701880" />
     <state x="2285" y="10" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588599559720" />
-    <state x="292" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586108721846" />
+    <state x="292" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589806609939" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1588236167236">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588236167236" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1589202448238">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1589823481954">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588781647986" />
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588703168690" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589202448238" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1589202448238">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589823481954" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1589823481954">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588781647986" />
     <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588703168690" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589202448238" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1589202448238">
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589823481954" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1589823481954">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588781647986" />
     <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588703168690" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589202448238" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1589202448238">
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589823481954" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1589823481954">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588781647986" />
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588703168690" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589202448238" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589823481954" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1585751031086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -446,11 +449,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="481" y="129" key="MultipleFileMergeDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588239971370" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1589197800969">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="2501" y="300" key="com.intellij.ide.util.TipDialog" timestamp="1589881967518">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2501" y="300" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1588777330967" />
-    <state x="2501" y="300" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1588666461770" />
+    <state x="2501" y="300" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589799273622" />
+    <state x="2501" y="300" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589881967518" />
     <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589197800969" />
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588239961118">
       <screen x="0" y="0" width="1536" height="824" />
