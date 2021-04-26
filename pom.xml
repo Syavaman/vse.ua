@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
         <selenium.version>3.141.59</selenium.version>
-        <commons.version>2.6</commons.version>
+        <commons.version>2.7</commons.version>
         <testng.version>7.1.0</testng.version>
         <allure.version>2.7.0</allure.version>
     </properties>
